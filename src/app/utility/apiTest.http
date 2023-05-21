@@ -1,0 +1,81 @@
+### Create Request
+
+
+# @host = https://limadi-api.atiar.info/api/v1
+@host = https://dev-api.limadi.dk/api/v1
+@token = eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiJ9.eyJhdWQiOiI1IiwianRpIjoiYzBlZDNkZjM2MWM1MGZjNWY1ZGJmMmNmMWE4NTI3MjE3M2I1ZDI5ODFiODJiOTBjMjQ1YmNiZGFhOTliMTYxOWZhMDlhMWU4ODRkNDUwNzgiLCJpYXQiOjE2ODAzMTExODUuNzUyMjM4OTg4ODc2MzQyNzczNDM3NSwibmJmIjoxNjgwMzExMTg1Ljc1MjI0MjA4ODMxNzg3MTA5Mzc1LCJleHAiOjE3MTE5MzM1ODUuNzQxMTY4OTc1ODMwMDc4MTI1LCJzdWIiOiIyMzciLCJzY29wZXMiOltdfQ.M5k_6oaMe5NMNhNZhgGLdj2seHqj2UVpm1b4AsZIUR6bV3KLbB25x1ybs6t8EzV_xXZZMp86eL6fXejroICI9pNKmID2HmsnBc_WJ8HBqgHQntQdj5vzVJob2X2wkfaR8SQYsJmS2FWoy0JYik_06pgMXUUo4qKjuVM6s9k-VIp6zTy329IR5Lxs8hhbmA1tlVa6RZltUt8kIxZcmWM-QGsBPwgF2dMeJRZSdl5pb7khZ1TYnEzp_S8_AGm813qQg_AKyeYCkjDMKTlhy9zZbjTwzgMkXsW2SIZAmY_zVpWkwZ-7lERWPAXsLz5k2Qs3dLaYxkoVuxtajUZQlbBEMHPpD_AMRdOaNo9owRxz4g_yM8K3pGsWDnD_wXZLDctVmp5JVW9Z6XnHmDNub91DQYhVaWbEKTA9-Uryy2DHBTzNIGUmQoNUTflB3f211ahb7rY3Z7H8FpaTTGyDxGbXqhMUydalx2Fd3aErmfVFRd2UipVQ0DmqELLbY8lh1rNiUUsVhoPOR-jvvSOkH3ErWDa-Bpib2D1tA_rP6xZP9xfOJWumaP9rIb9VpHq-w-66Gs0y8vfX3eihfBOj6g25FCvymuoMGQcrzOMEvH0gcYj62G2NTu7wajkPK-6PE4z5ynkXzLfSWuUIT0OqHbG86z05_1fW9XZ5tGE8RxibIJM
+
+### Login
+POST {{host}}/auth/login HTTP/1.1
+content-type: application/json
+
+{
+    "email": "tamjedpeace+customer1@gmail.com",
+    "password": "P@$$w0rd",
+    "is_web" : 1
+}
+
+####
+
+
+POST {{host}}/request/create
+content-type: application/json
+Authorization: Bearer {{token}}
+
+{
+    "id": 1516,
+    "is_web": true,
+    # "action": "submit",
+    "action": "save",
+    # "action": "next",
+    "is_mass": false,
+    "title": "Boxes & Furniture Movement ",
+    "transport_type": "Home Delivery",
+    "typeoftransportation_id": 4,
+    "pickup_date": "03-06-2023",
+    "pickup_start_time": "10:30",
+    "pickup_end_time": "10:45",
+    "pickup_address": "Mirpur-14, Dhaka",
+    "pickup_lat": 23.789,
+    "pickup_lng": 90.456,
+    "pickup_comment": "Donec rutrum congue leo eget malesuada. Donec sollicitudin molestie malesuada.",
+    "pickup_attachment": "",
+    "stops": [
+        {
+            "title": "Random Name 01",
+            "address": "Gulisthan",
+            "lat": 23.789,
+            "lng": 90.456,
+            "comment": "Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat.",
+            "attachment": null,
+            "products": [
+                {
+                    "text": "Product Code: 654987329, This product is..."
+                },
+                {
+                    "text": "Product Code: 1111111222, This product is..."
+                }
+            ]
+        },
+        {
+            "title": "Random Name 02",
+            "address": "Gulisthan",
+            "lat": 23.789,
+            "lng": 90.456,
+            "comment": "Pellentesque in ipsum id orci porta dapibus. Nulla quis lorem ut libero malesuada feugiat.",
+            "attachment": null,
+            "products": [
+                {
+                    "text": "Product Code: 65498732955, This product is..."
+                },
+                {
+                    "text": "Product Code: 1111111222333, This product is..."
+                }
+            ]
+        }
+        
+    ],
+    "is_global": true,
+    "invitation_ids": [6,367]
+}
+
